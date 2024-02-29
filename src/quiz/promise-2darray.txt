@@ -1,1 +1,12 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+- First call to Sum2DArray: Logs "Sum Called.." 
+- Sum calculation is scheduled
+- "Returning from sum" is logged 
+- "Rejecting" is logged because its a bad input
+- The Sum2DArray is called again with a string array and it logs "Sum called"
+- Since the input is not an array the else block is called and logs "rejecting.."
+- The sumPromise2 is returned from the second call to Sum2DArray and logs "Bad Input:.."
+- Now all the synchronous code was executed. The callback from set Timeout in the first Sum2DArray and executes it and
+that calulates the sum and logs "resolving..."
+- sumPromise1 is called and the sum of the 2D array is logged. 
